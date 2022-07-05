@@ -247,7 +247,6 @@ app.post('/sendNotification', async (req, res) => {
 
 app.post('/postRR', async (req, res) => {
     let { build, room, date, time, reason, count, room_id } = req.body;
-    console.log(req.body)
     if (build && room && date && time && reason && count && room_id) {
         try {
             const query = "DELETE FROM notification WHERE notification_reason = '" + reason + "' AND ref_room = " + room_id +";";
